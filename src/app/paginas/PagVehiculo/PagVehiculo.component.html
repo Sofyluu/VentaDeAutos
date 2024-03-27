@@ -1,0 +1,88 @@
+<div class="card card border-success">
+  <div class="card-header text-success h5" *ngIf="vehiculo">
+      <strong>{{vehiculo.marca | uppercase}}</strong>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="formulario">
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Codigo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="codigo" formControlName="codigo">
+              <span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">Valor Requerido</span>
+              <br>
+              <span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate']">Formato no
+                valido</span>
+
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Marca:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="marca" formControlName="marca">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Modelo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="modelo" formControlName="modelo">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Año:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="anio" formControlName="anio">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Kilometraje:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="kilometraje" formControlName="kilometraje">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Precio:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="precio" formControlName="precio">
+            </div>
+          </div>
+
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Calificacion:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="calificacion"
+                formControlName="calificacion">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-success btn-block" (click)="guardar()">Guardar</button>
+    </div>
+
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-4">
+    <button type="button" class="btn btn-warning" [routerLink]="['/vehiculos']">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+      </svg>
+
+      Volver
+    </button>
+  </div>
+</div>
+<br>

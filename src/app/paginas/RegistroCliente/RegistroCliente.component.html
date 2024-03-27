@@ -1,0 +1,55 @@
+<div class="card card border-success">
+  <div class="card-header text-success h5">
+    <strong>REGISTRO DEL CLIENTE</strong>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formulario">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="staticCodigo">Nombre</label>
+          <input type="text" class="form-control" id="staticCodigo" name="nombre" formControlName="nombre">
+          <span class="text-secondary" *ngIf="formulario.controls['nombre'].errors?.['required'] && formulario.get('nombre')?.touched">Valor Requerido</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="staticCodigo">Apellido</label>
+          <input type="text" class="form-control" id="staticCodigo" name="apellido" formControlName="apellido">
+          <span class="text-secondary" *ngIf="formulario.controls['apellido'].errors?.['required'] && formulario.get('apellido')?.touched">Valor Requerido</span>
+        </div>
+        <div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" (change)="toggleCamposAdicionales($event)">
+            <label class="form-check-label" for="exampleCheck1">Desea que lo contactemos?</label>
+          </div>
+        </div>
+        <br>
+        <div class="form-row" *ngIf="mostrarCamposAdicionales">
+          <div class="col-md-4 mb-3">
+            <label for="staticCodigo">Direccion de correo</label>
+            <input type="text" class="form-control" id="staticCodigo" name="email" formControlName="email">
+            <span class="text-secondary" *ngIf="formulario.controls['email'].errors?.['required']">Valor Requerido</span>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="staticCodigo">Telefono</label>
+            <input type="text" class="form-control" id="staticCodigo" name="telefono" formControlName="telefono">
+            <span class="text-secondary" *ngIf="formulario.controls['telefono'].errors?.['required']">Valor Requerido</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit" (click)="guardar()">GUARDAR</button>
+    </form>
+  </div>
+</div>
+<br>
+<div class="4">
+  <button type="button" class="btn btn-warning" [routerLink]="['/home']">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-heart-fill"
+      viewBox="0 0 16 16">
+      <path
+        d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707z" />
+      <path
+        d="m14 9.293-6-6-6 6V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5zm-6-.811c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018" />
+    </svg>
+
+    Inicio
+  </button>
+</div>

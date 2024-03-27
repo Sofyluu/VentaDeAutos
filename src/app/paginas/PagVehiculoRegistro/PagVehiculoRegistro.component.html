@@ -1,0 +1,99 @@
+<div class="card card border-success">
+  <div class="card-header text-success h5">
+    <strong>CREACION DE VEHICULO</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="formulario" >
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Codigo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="codigo" formControlName="codigo">
+              <span class="text-secondary" *ngIf="formulario.controls['codigo'].errors?.['required'] && formulario.get('codigo')?.touched">Valor Requerido</span> <br>
+              <span class="text-secondary" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate']">Formato no valido</span>
+
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Marca:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="marca" formControlName="marca">
+              <span class="text-secondary" *ngIf="formulario.controls['marca'].errors?.['required'] && formulario.get('marca')?.touched">Valor Requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Modelo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="modelo" formControlName="modelo">
+              <span class="text-secondary" *ngIf="formulario.controls['modelo'].errors?.['required'] && formulario.get('modelo')?.touched">Valor Requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Año:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="anio" formControlName="anio">
+              <span class="text-secondary" *ngIf="formulario.controls['anio'].errors?.['required'] && formulario.get('anio')?.touched">Valor Requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Kilometraje:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="kilometraje" formControlName="kilometraje">
+              <span class="text-secondary" *ngIf="formulario.controls['kilometraje'].errors?.['required'] && formulario.get('kilometraje')?.touched">Valor Requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Precio:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="precio" formControlName="precio">
+              <span class="text-secondary" *ngIf="formulario.controls['precio'].errors?.['required'] && formulario.get('precio')?.touched">Valor Requerido</span>
+            </div>
+          </div>
+
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Calificacion:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="statcCodigo" name="calificacion" formControlName="calificacion">
+              <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['required'] && formulario.get('calificacion')?.touched">Valor Requerido</span> <br>
+              <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['codigoValidate']">Formato no valido</span>
+
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Foto:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="statcCodigo" name="foto" formControlName="foto">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <button class="btn btn-success btn-block" (click)="guardar()">GUARDAR</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-4">
+    <button type="button" class="btn btn-warning" [routerLink]="['/vehiculos']">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+      </svg>
+
+      Volver
+    </button>
+  </div>
+</div>
+<br>
