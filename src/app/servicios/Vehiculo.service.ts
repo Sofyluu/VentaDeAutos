@@ -30,9 +30,6 @@ export class VehiculoService {
 
     return this.http.get<Respuesta>(this.baseUrl+"vehiculos/", {params: body});
 
-    // return this.http.get<Respuesta>(this.baseUrl+"vehiculos/", {params: body}).pipe(
-    //   map(respuesta => respuesta.data)
-    // );
   }
 
   insertVehiculo(vehiculo: Vehiculo): Observable<Respuesta> {

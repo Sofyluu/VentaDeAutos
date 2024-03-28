@@ -20,6 +20,11 @@ export class ClienteService {
     return this.http.post<Respuesta>(this.baseUrl+"cliente/", cliente, this.httpOptions);
   }
 
+  getClientes():Observable<Respuesta>{
+    let body = new HttpParams();
+    return this.http.get<Respuesta>(this.baseUrl+"clientes/");
+
+  }
 }
 
 export interface Respuesta{

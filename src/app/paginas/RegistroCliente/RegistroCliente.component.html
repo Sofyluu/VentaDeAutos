@@ -6,31 +6,31 @@
     <form [formGroup]="formulario">
       <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="staticCodigo">Nombre</label>
-          <input type="text" class="form-control" id="staticCodigo" name="nombre" formControlName="nombre">
+          <label for="staticCodigo1">Nombre</label>
+          <input type="text" class="form-control" id="staticCodigo1" name="nombre" formControlName="nombre">
           <span class="text-secondary" *ngIf="formulario.controls['nombre'].errors?.['required'] && formulario.get('nombre')?.touched">Valor Requerido</span>
         </div>
         <div class="col-md-4 mb-3">
-          <label for="staticCodigo">Apellido</label>
-          <input type="text" class="form-control" id="staticCodigo" name="apellido" formControlName="apellido">
+          <label for="staticCodigo2">Apellido</label>
+          <input type="text" class="form-control" id="staticCodigo2" name="apellido" formControlName="apellido">
           <span class="text-secondary" *ngIf="formulario.controls['apellido'].errors?.['required'] && formulario.get('apellido')?.touched">Valor Requerido</span>
         </div>
         <div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" (change)="toggleCamposAdicionales($event)">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" (change)="toggleCamposAdicionales($event)">
             <label class="form-check-label" for="exampleCheck1">Desea que lo contactemos?</label>
           </div>
         </div>
         <br>
         <div class="form-row" *ngIf="mostrarCamposAdicionales">
           <div class="col-md-4 mb-3">
-            <label for="staticCodigo">Direccion de correo</label>
-            <input type="text" class="form-control" id="staticCodigo" name="email" formControlName="email">
+            <label for="staticCodigo3">Direccion de correo</label>
+            <input type="text" class="form-control" id="staticCodigo3" name="email" formControlName="email">
             <span class="text-secondary" *ngIf="formulario.controls['email'].errors?.['required']">Valor Requerido</span>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="staticCodigo">Telefono</label>
-            <input type="text" class="form-control" id="staticCodigo" name="telefono" formControlName="telefono">
+            <label for="staticCodigo4">Telefono</label>
+            <input type="text" class="form-control" id="staticCodigo4" name="telefono" formControlName="telefono">
             <span class="text-secondary" *ngIf="formulario.controls['telefono'].errors?.['required']">Valor Requerido</span>
           </div>
         </div>

@@ -20,6 +20,8 @@ export class RegistroClienteComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       "nombre": ['', [Validators.required]],
       "apellido": ['', [Validators.required]],
+      "email": ['',],
+      "telefono": ['',],
     });
   }
 
