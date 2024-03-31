@@ -3,7 +3,7 @@ import { Vehiculo } from '../../utilitarios/modelos/Vehiculo';
 import { ActivatedRoute } from '@angular/router';
 import { VehiculoService } from '../../servicios/Vehiculo.service';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { validadorCodigo } from '../../utilitarios/validadaciones/VehiculoValidacion';
+import { validadorCodigo, validadorCalificacion } from '../../utilitarios/validadaciones/VehiculoValidacion';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -31,7 +31,7 @@ export class PagVehiculoComponent implements OnInit {
       "anio":['', [Validators.required]],
       "kilometraje":[],
       "precio": [],
-      "calificacion": ['', [Validators.required]],
+      "calificacion": ['', [Validators.required, validadorCalificacion()]],
     });
     this.formulario.controls['codigo'].disable();
   }

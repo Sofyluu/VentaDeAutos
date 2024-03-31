@@ -11,7 +11,7 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="statcCodigo" name="codigo" formControlName="codigo">
               <span class="text-secondary" *ngIf="formulario.controls['codigo'].errors?.['required'] && formulario.get('codigo')?.touched">Valor Requerido</span> <br>
-              <span class="text-secondary" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate']">Formato no valido</span>
+              <span class="text-secondary" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate'] && formulario.get('calificacion')?.touched">Formato no valido</span>
 
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="col-sm-10">
               <input type="number" class="form-control" id="statcCodigo" name="calificacion" formControlName="calificacion">
               <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['required'] && formulario.get('calificacion')?.touched">Valor Requerido</span> <br>
-              <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['codigoValidate']">Formato no valido</span>
+              <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['codigoValidate'] && formulario.get('calificacion')?.touched">Formato no valido</span>
 
             </div>
           </div>

@@ -58,8 +58,8 @@
           <div class="mb-3 row">
             <label for="staticCodigo" class="col-sm-2 col-form-label">Calificacion:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="statcCodigo" name="calificacion"
-                formControlName="calificacion">
+              <input type="number" class="form-control" id="statcCodigo" name="calificacion" formControlName="calificacion">
+              <span class="text-secondary" *ngIf="formulario.controls['calificacion'].errors?.['codigoValidate']">Formato no valido</span>
             </div>
           </div>
         </form>
